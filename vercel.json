@@ -1,0 +1,17 @@
+{
+  "crons": [{ "path": "/api/burn", "schedule": "0 12 * * *" }],
+  "functions": {
+    "api/pay.js": { "maxDuration": 60 },
+    "api/order.js": { "maxDuration": 30 },
+    "api/burn.js": { "maxDuration": 60 },
+    "api/quote.js": { "maxDuration": 30 },
+    "api/catalog.js": { "maxDuration": 30 },
+    "api/bags.js": { "maxDuration": 20 },
+    "api/rpc.js": { "maxDuration": 25 },
+    "api/stats.js": { "maxDuration": 10 }
+  },
+  "headers": [
+    { "source": "/sharkcard.js", "headers": [{ "key": "Cache-Control", "value": "public, max-age=300, stale-while-revalidate=86400" }] },
+    { "source": "/api/(.*)", "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }] }
+  ]
+}

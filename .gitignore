@@ -1,0 +1,5 @@
+.env*
+SECRETS/
+node_modules/
+.vercel
+*.secret.json
